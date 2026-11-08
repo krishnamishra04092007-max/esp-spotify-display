@@ -10,6 +10,12 @@
 [![Python](https://img.shields.io/badge/Companion-Python%203-3776AB.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+<br/><br/>
+
+<img src="assets/demo.jpg" width="620" alt="ESP32 Spotify Display Live Output Demo" style="border-radius: 10px; max-width: 100%;">
+
+<p><em><b>Live Output:</b> Displaying Guns N' Roses – "Sweet Child O' Mine" with in-memory decoded album poster, track info, and real-time progress bar.</em></p>
+
 </div>
 
 ---
