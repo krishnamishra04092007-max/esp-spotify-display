@@ -48,7 +48,7 @@ flowchart LR
         WS["🌐 Local WebServer (:80)"]
         DEC["🖼️ TJpg_Decoder Engine"]
         GFX["🖥️ MCUFRIEND_kbv / Adafruit GFX"]
-        TFT["🎨 2.4\" TFT Display (ILI9341 320x240)"]
+        TFT["🎨 2.4-inch TFT Display (ILI9341 320x240)"]
         WS --> DEC
         DEC --> GFX
         GFX --> TFT
