@@ -31,31 +31,31 @@ This project turns an **ESP32** and a **2.4" TFT LCD Shield** into a standalone 
 
 ```mermaid
 flowchart LR
-    subgraph Host ["💻 Windows Host PC"]
+    subgraph Host ["Windows Host PC"]
         direction TB
-        SP["🎧 Spotify Playback<br/>(Chrome / App / Free / Premium)"]
-        GSMTC["🎛️ Windows Media Controls (GSMTC)"]
-        PY["🐍 pc_companion.py"]
-        API["🌐 Public Music Catalog<br/>(iTunes / Deezer CDN)"]
+        SP["Spotify Playback"]
+        GSMTC["Windows Media Controls"]
+        PY["pc_companion.py"]
+        API["Public Music Catalog"]
         SP --> GSMTC
         GSMTC --> PY
-        PY -->|Search Artwork| API
-        API -->|300x300 JPEG URL| PY
+        PY -->|"Search Artwork"| API
+        API -->|"Artwork URL"| PY
     end
 
-    subgraph ESP ["⚡ ESP32 (WROOM / D1 R32)"]
+    subgraph ESP ["ESP32 Device"]
         direction TB
-        WS["🌐 Local WebServer (:80)"]
-        DEC["🖼️ TJpg_Decoder Engine"]
-        GFX["🖥️ MCUFRIEND_kbv / Adafruit GFX"]
-        TFT["🎨 2.4-inch TFT Display (ILI9341 320x240)"]
+        WS["Local WebServer"]
+        DEC["TJpg_Decoder Engine"]
+        GFX["MCUFRIEND_kbv"]
+        TFT["2.4-inch TFT Display"]
         WS --> DEC
         DEC --> GFX
         GFX --> TFT
     end
 
-    PY -->|HTTP POST /track (JSON)| WS
-    WS -->|Download JPEG stream| API
+    PY -->|"HTTP POST /track"| WS
+    WS -->|"Download JPEG"| API
 ```
 
 ---
