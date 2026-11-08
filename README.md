@@ -62,12 +62,12 @@ flowchart LR
 
 ## 🧰 Hardware Requirements
 
-| Component | Description |
-| :--- | :--- |
-| **Microcontroller** | ESP32 (e.g. WeMos D1 R32 Uno form-factor or standard ESP32 DevKit) |
-| **Display** | 2.4" TFT LCD Shield (8-bit parallel, ILI9341 / 0xD3D3, 320x240 resolution) |
-| **Interface** | 8-bit parallel bus (plug-and-play shield or jumper wired) |
-| **Connectivity** | 2.4 GHz Wi-Fi (802.11 b/g/n) |
+| Image | Component | Description | Specification / Role |
+| :---: | :--- | :--- | :--- |
+| <img src="assets/esp32.jpg" width="90" alt="ESP32 Development Board"> | **Microcontroller** | ESP32 Development Board (ESP-WROOM-32 / WeMos D1 R32) | Dual-core 240MHz, 2.4 GHz Wi-Fi, drives display & runs local HTTP server |
+| <img src="assets/tft_display.jpg" width="90" alt="2.4 inch TFT LCD Shield"> | **Display Module** | 2.4" TFT LCD Shield (ILI9341 / 0xD3D3) | 320x240 RGB resolution, 8-bit parallel bus, onboard display driver |
+| <img src="assets/jumper_wires.jpg" width="90" alt="Jumper Wires"> | **Wiring** | Jumper Wires (Dupont Cables) | Connects ESP32 GPIO pins to TFT shield data (D0-D7) & control lines |
+| <span style="font-size: 2rem;">📶</span> | **Connectivity** | 2.4 GHz Wi-Fi (802.11 b/g/n) | Network communication for track payloads and album art streams |
 
 ---
 
@@ -75,6 +75,7 @@ flowchart LR
 
 ```text
 esp-spotify-display/
+├── assets/                       # Hardware previews & documentation images
 ├── Spotify_TFT_Display/
 │   ├── Spotify_TFT_Display.ino   # Main ESP32 firmware (Wi-Fi, HTTP Server, JPEG Decoder, TFT UI)
 │   └── config.example.h          # Template for Wi-Fi credentials
