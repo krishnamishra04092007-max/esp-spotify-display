@@ -77,6 +77,43 @@ flowchart LR
 
 ---
 
+## 🔌 Wiring Guide (2.4" TFT Shield → ESP32)
+
+If connecting the 2.4" TFT LCD Shield to a standard ESP32 development board via jumper wires, wire the pins as follows:
+
+### 1. Power Pins
+| 2.4" TFT Shield Pin | ESP32 Pin | Function |
+| :--- | :--- | :--- |
+| **5V** | **VIN (5V)** | Main Power Supply |
+| **GND** | **GND** | Ground |
+| **3.3V** | *(Leave Unconnected)* | Shield receives regulated power via the 5V pin |
+
+### 2. Control Pins
+| 2.4" TFT Shield Pin | ESP32 Pin | Function |
+| :--- | :--- | :--- |
+| **LCD_RD** | **3V3** *(or GPIO 2)* | Read line (Tie HIGH to 3.3V to keep active) |
+| **LCD_WR** | **GPIO 4** | Write control line |
+| **LCD_RS (or CD)** | **GPIO 15** | Command / Data selection |
+| **LCD_CS** | **GPIO 33** | Display Chip Select |
+| **LCD_RST** | **GPIO 32** | Display Hardware Reset |
+
+### 3. 8-Bit Data Bus Pins
+| 2.4" TFT Shield Pin | ESP32 Pin | Function |
+| :--- | :--- | :--- |
+| **LCD_D0** | **GPIO 12** | Data Bit 0 |
+| **LCD_D1** | **GPIO 13** | Data Bit 1 |
+| **LCD_D2** | **GPIO 26** | Data Bit 2 |
+| **LCD_D3** | **GPIO 25** | Data Bit 3 |
+| **LCD_D4** | **GPIO 17** | Data Bit 4 |
+| **LCD_D5** | **GPIO 16** | Data Bit 5 |
+| **LCD_D6** | **GPIO 27** | Data Bit 6 |
+| **LCD_D7** | **GPIO 14** | Data Bit 7 |
+
+> [!TIP]
+> Keep jumper wire lengths as short as possible (ideally under 15 cm / 6 inches) to prevent signal degradation on the high-speed 8-bit parallel bus. If using an Uno-format ESP32 board (like the WeMos D1 R32), the shield plugs directly on top.
+
+---
+
 ## 📂 Project Structure
 
 ```text
